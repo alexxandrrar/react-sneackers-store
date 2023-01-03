@@ -1,0 +1,19 @@
+.nav {
+  margin-right: 2%;
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    float: left;
+
+    a {
+      padding: 15px;
+    }
+  }
+
+  li a img:hover {
+    opacity: 0.5;
+  }
+}
