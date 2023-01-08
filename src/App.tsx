@@ -1,5 +1,5 @@
 import { Header } from './components/Header/Header'
-import { CarouselComponent } from './components/Carousel/CarouselComponent'
+import { CarouselComponent } from './components/CarouselComponent/CarouselComponent'
 
 import './App.css'
 
