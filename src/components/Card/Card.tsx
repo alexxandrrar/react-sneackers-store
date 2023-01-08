@@ -3,7 +3,7 @@ import { Button } from '../Button/Button'
 
 import style from './Card.module.scss'
 
-interface ICardProps {
+export interface ICardProps {
   id: number
   title: string
   price: number
@@ -13,10 +13,12 @@ interface ICardProps {
 export const Card: FC<ICardProps> = ({ title, price, imageUrl }) => {
   return (
     <div className={style.card}>
-      <Button handleOnClick={() => console.log('Added to favourites')} buttonType='card-btn'>
-        ♡
-      </Button>
-      <img height='100' src={imageUrl} alt='sneackers' />
+      <div className={style.btn}>
+        <Button handleOnClick={() => console.log('Added to favourites')} buttonType='card-btn'>
+          ♡
+        </Button>
+      </div>
+      <img height='110' src={imageUrl} alt='sneackers' />
       <p className={style.title}>{title}</p>
       <div className={style.info}>
         <div>

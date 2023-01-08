@@ -1,0 +1,24 @@
+@import '../../styles/variables.module.scss';
+
+.container {
+  padding: 0 60px 60px;
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .title {
+    color: $textDark;
+    font-family: $fontFamily;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
