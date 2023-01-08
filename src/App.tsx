@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Header } from './components/Header/Header'
+import { CarouselComponent } from './components/CarouselComponent/CarouselComponent'
+
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='content-container'>
+        <Header />
+        <CarouselComponent />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+// <Card
+//   id={1}
+//   title={'Nike Crater Impact Sneakers'}
+//   price={54654}
+//   imageUrl='https://cdn.runrepeat.com/i/nike/25573/nike-men-s-air-zoom-structure-21-running-shoes-blue-navy-white-7-5-d-m-us-mens-blue-navy-white-9760-main.jpg'
+// />
+
+export default App
