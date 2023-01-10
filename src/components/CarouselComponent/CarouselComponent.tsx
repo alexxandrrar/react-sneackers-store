@@ -1,6 +1,6 @@
 import { Carousel } from 'antd'
-import carouselFirstSlideImage from '../../assets/images/stanhder.jpg'
-import carouselSecondSlideImage from '../../assets/images/nike.jpg'
+import carouselFirstSlideImage from 'assets/images/stanhder.jpg'
+import carouselSecondSlideImage from 'assets/images/nike.jpg'
 import style from './CarouselComponent.module.scss'
 
 export const CarouselComponent = () => {

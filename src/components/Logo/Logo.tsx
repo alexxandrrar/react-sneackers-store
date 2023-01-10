@@ -1,6 +1,6 @@
-import logo from '../../assets/images/logo.png'
+import logo from 'assets/images/logo.png'
 import style from './Logo.module.scss'
-import { LOGO_TEXT } from '../../constants/constants'
+import { LOGO_TEXT } from 'constants/constants'
 
 export const Logo = () => {
   return (

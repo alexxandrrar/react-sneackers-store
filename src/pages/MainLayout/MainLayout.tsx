@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { SearchComponent } from '../../components/SearchComponent/SearchComponent'
-import { Card, ICardProps } from '../../components/Card/Card'
+import { SearchComponent } from 'components/SearchComponent/SearchComponent'
+import { Card, ICardProps } from 'components/Card/Card'
 import { Skeleton } from 'antd'
-import img from '../../assets/img/1.jpg'
+import img from 'assets/img/1.jpg'
 
 import style from './MainLayout.module.scss'
 

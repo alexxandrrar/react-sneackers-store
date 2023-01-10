@@ -1,6 +1,6 @@
-import cart from '../../assets/images/cart.svg'
-import heart from '../../assets/images/heart.svg'
-import user from '../../assets/images/user.svg'
+import cart from 'assets/images/cart.svg'
+import heart from 'assets/images/heart.svg'
+import user from 'assets/images/user.svg'
 
 import style from './Navigation.module.scss'
 
