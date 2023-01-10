@@ -1,6 +1,8 @@
-export const checkButton = (type: string) => {
+import { GREEN_STYLE_BUTTON, CARD_STYLE_BUTTON } from '../constants/constants'
+
+export const checkButtonStyles = (type: string) => {
   switch (type) {
-    case 'green-btn':
+    case GREEN_STYLE_BUTTON:
       return {
         background: '#9DD458',
         borderRadius: '18px',
@@ -8,7 +10,7 @@ export const checkButton = (type: string) => {
         width: '245px',
         color: '#FFFFFF',
       }
-    case 'card-btn':
+    case CARD_STYLE_BUTTON:
       return {
         height: '32px',
         width: '32px',
