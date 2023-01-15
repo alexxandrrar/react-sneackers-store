@@ -1,6 +1,9 @@
-import { GREEN_STYLE_BUTTON, CARD_STYLE_BUTTON } from 'constants/constants'
+import { TButtonStyles } from 'types/CommonTypes'
 
-export const checkButtonStyles = (type: string) => {
+export const GREEN_STYLE_BUTTON = 'green-btn'
+export const CARD_STYLE_BUTTON = 'card-btn'
+
+export const checkButtonStyles = (type: TButtonStyles) => {
   switch (type) {
     case GREEN_STYLE_BUTTON:
       return {
