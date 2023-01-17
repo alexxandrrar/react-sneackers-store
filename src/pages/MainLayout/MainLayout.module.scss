@@ -1,0 +1,29 @@
+@import '../../styles/variables.module.scss';
+
+.container {
+  padding: 0 3.75rem 3.75rem;
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+  }
+
+  .title {
+    color: $textDark;
+    font-family: $fontFamily;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.43rem;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .loader {
+    text-align: center;
+  }
+}

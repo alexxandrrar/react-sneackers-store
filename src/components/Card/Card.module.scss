@@ -1,19 +1,27 @@
 @import '../../styles/variables.module.scss';
 .card {
-  padding: 20px 33px;
+  text-align: center;
+  padding: 1.25rem;
   background: #ffffff;
   border: 1px solid #f3f3f3;
-  border-radius: 40px;
-  width: 210px;
-  height: 260px;
-  box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 2.5rem;
+  width: 13.25rem;
+  height: 16.25rem;
+  box-shadow: 0px 0.875rem 1.875rem rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  margin-right: 1.9rem;
+
+  .btn {
+    text-align: start;
+  }
 
   .title {
+    text-align: start;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: $textDark;
     font-family: $fontFamily;
-    margin: 15px 0;
+    margin: 0.93rem 0;
   }
 
   .info {
@@ -24,14 +32,14 @@
       font-family: $fontFamily;
       color: $editionalColor2;
       font-weight: 500;
-      font-size: 11px;
+      font-size: 0.68rem;
     }
 
     .price {
       font-family: $fontFamily;
       color: $textDark;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 }
