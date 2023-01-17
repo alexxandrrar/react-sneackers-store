@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { Button } from 'components/Button/Button'
+import image from 'assets/img/1.jpg'
 
 import style from './Card.module.scss'
 
@@ -10,7 +11,7 @@ export interface ICardProps {
   imageUrl: string
 }
 
-export const Card: FC<ICardProps> = ({ title, price, imageUrl }) => {
+export const Card: FC<ICardProps> = ({ title, price }) => {
   return (
     <div className={style.card}>
       <div className={style.btn}>
@@ -18,7 +19,7 @@ export const Card: FC<ICardProps> = ({ title, price, imageUrl }) => {
           ♡
         </Button>
       </div>
-      <img height='110' src={imageUrl} alt='sneackers' />
+      <img height='110' src={image} alt='sneackers' />
       <p className={style.title}>{title}</p>
       <div className={style.info}>
         <div>
