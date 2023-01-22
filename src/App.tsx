@@ -1,6 +1,8 @@
 import { Header } from './components/Header/Header'
-import { CarouselComponent } from './components/CarouselComponent/CarouselComponent'
 import { MainLayout } from './pages/MainLayout/MainLayout'
+import { Route, Routes } from 'react-router-dom'
+import { LikedPage } from 'pages/LikedPage/LikedPage'
+import { CartPage } from 'pages/CartPage/CartPage'
 
 import './App.css'
 
@@ -9,8 +11,11 @@ function App() {
     <div className='App'>
       <div className='content-container'>
         <Header />
-        <CarouselComponent />
-        <MainLayout />
+        <Routes>
+          <Route path='/' element={<MainLayout />} />
+          <Route path='/cart' element={<CartPage />} />
+          <Route path='/liked' element={<LikedPage />} />
+        </Routes>
       </div>
     </div>
   )

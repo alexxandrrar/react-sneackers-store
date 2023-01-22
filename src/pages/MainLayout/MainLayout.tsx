@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { SearchComponent } from 'components/SearchComponent/SearchComponent'
+import { CarouselComponent } from 'components/CarouselComponent/CarouselComponent'
 import { Card } from 'components/Card/Card'
 import { Spin } from 'antd'
 import { ISneackers } from 'types/dataTypes'
@@ -19,29 +20,32 @@ export const MainLayout = () => {
   }, [])
 
   return (
-    <div className={style.container}>
-      <div className={style.info}>
-        <h1 className={style.title}>{t('All sneackers:')}</h1>
-        <SearchComponent />
+    <>
+      <CarouselComponent />
+      <div className={style.container}>
+        <div className={style.info}>
+          <h1 className={style.title}>{t('All sneackers:')}</h1>
+          <SearchComponent />
+        </div>
+        {error && <h1>{error}</h1>}
+        {isLoaded ? (
+          <div className={style.loader}>
+            <Spin size='large' />
+          </div>
+        ) : (
+          <div className={style.cards}>
+            {sneackers.map((card: ISneackers) => (
+              <Card
+                key={card.id}
+                id={card.id}
+                title={card.title}
+                price={card.price}
+                imageUrl={card.imageUrl}
+              />
+            ))}
+          </div>
+        )}
       </div>
-      {error && <h1>{error}</h1>}
-      {isLoaded ? (
-        <div className={style.loader}>
-          <Spin size='large' />
-        </div>
-      ) : (
-        <div className={style.cards}>
-          {sneackers.map((card: ISneackers) => (
-            <Card
-              key={card.id}
-              id={card.id}
-              title={card.title}
-              price={card.price}
-              imageUrl={card.imageUrl}
-            />
-          ))}
-        </div>
-      )}
-    </div>
+    </>
   )
 }
