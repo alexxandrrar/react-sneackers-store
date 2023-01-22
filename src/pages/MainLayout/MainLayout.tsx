@@ -1,15 +1,16 @@
 import { useEffect } from 'react'
 import { SearchComponent } from 'components/SearchComponent/SearchComponent'
-import { Card, ICardProps } from 'components/Card/Card'
+import { Card } from 'components/Card/Card'
 import { Spin } from 'antd'
+import { ISneackers } from 'types/dataTypes'
 import { useAppDispatch, useAppSelector } from 'hooks/reduxHook'
-import { fetchSneackers } from 'store/reducers/ActionCreators'
+import { fetchSneackers } from 'store/reducers/sneackers/sneackersActionCreator'
 
 import style from './MainLayout.module.scss'
 
 export const MainLayout = () => {
-  const { sneackers, isLoaded, error } = useAppSelector((state) => state.sneackersReducer)
   const dispatch = useAppDispatch()
+  const { sneackers, isLoaded, error } = useAppSelector((state) => state.sneackersReducer)
 
   useEffect(() => {
     dispatch(fetchSneackers())
@@ -28,7 +29,7 @@ export const MainLayout = () => {
         </div>
       ) : (
         <div className={style.cards}>
-          {sneackers.map((card: ICardProps) => (
+          {sneackers.map((card: ISneackers) => (
             <Card
               key={card.id}
               id={card.id}

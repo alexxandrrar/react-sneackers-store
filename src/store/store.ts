@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import sneackersReducer from 'store/reducers/sneackersSlice'
+import sneackersReducer from 'store/reducers/sneackers/sneackersSlice'
 
 const rootReducer = combineReducers({ sneackersReducer })
 

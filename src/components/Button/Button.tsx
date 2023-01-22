@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { checkButtonStyles } from 'utils/checkButtonStyles'
 import style from './Button.module.scss'
-import { TButtonStyles } from 'types/CommonTypes'
+import { TButtonStyles } from 'types/commonTypes'
 
 interface IButtonProps {
   children?: React.ReactNode

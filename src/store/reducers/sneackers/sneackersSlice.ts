@@ -1,8 +1,8 @@
-import { ICardProps } from '../../components/Card/Card'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { ISneackers } from 'types/dataTypes'
 
 interface SneackersState {
-  sneackers: ICardProps[]
+  sneackers: ISneackers[]
   isLoaded: boolean
   error: string
 }
@@ -20,7 +20,7 @@ export const sneackersSlice = createSlice({
     sneackersFetching: (state) => {
       state.isLoaded = true
     },
-    sneackersFetchingSuccess: (state, action: PayloadAction<ICardProps[]>) => {
+    sneackersFetchingSuccess: (state, action: PayloadAction<ISneackers[]>) => {
       state.isLoaded = false
       state.error = ''
       state.sneackers = action.payload
