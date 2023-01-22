@@ -5,11 +5,13 @@ import { Spin } from 'antd'
 import { ISneackers } from 'types/dataTypes'
 import { useAppDispatch, useAppSelector } from 'hooks/reduxHook'
 import { fetchSneackers } from 'store/reducers/sneackers/sneackersActionCreator'
+import { useTranslation } from 'react-i18next'
 
 import style from './MainLayout.module.scss'
 
 export const MainLayout = () => {
   const dispatch = useAppDispatch()
+  const { t } = useTranslation()
   const { sneackers, isLoaded, error } = useAppSelector((state) => state.sneackersReducer)
 
   useEffect(() => {
@@ -19,7 +21,7 @@ export const MainLayout = () => {
   return (
     <div className={style.container}>
       <div className={style.info}>
-        <h1 className={style.title}>All sneackers:</h1>
+        <h1 className={style.title}>{t('All sneackers:')}</h1>
         <SearchComponent />
       </div>
       {error && <h1>{error}</h1>}
