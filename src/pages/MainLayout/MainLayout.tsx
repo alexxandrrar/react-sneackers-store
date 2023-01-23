@@ -12,7 +12,7 @@ import style from './MainLayout.module.scss'
 
 export const MainLayout = () => {
   const dispatch = useAppDispatch()
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
   const { sneackers, isLoaded, error } = useAppSelector((state) => state.sneackersReducer)
   const [filteredSneackers, setFilteredSneaclkers] = useState<ISneackers[] | null>(null)
 
