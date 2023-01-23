@@ -1,8 +1,6 @@
 import { Header } from './components/Header/Header'
-import { MainLayout } from './pages/MainLayout/MainLayout'
 import { Route, Routes } from 'react-router-dom'
-import { LikedPage } from 'pages/LikedPage/LikedPage'
-import { CartPage } from 'pages/CartPage/CartPage'
+import { routes } from 'constants/path'
 
 import './App.css'
 
@@ -12,9 +10,9 @@ function App() {
       <div className='content-container'>
         <Header />
         <Routes>
-          <Route path='/' element={<MainLayout />} />
-          <Route path='/cart' element={<CartPage />} />
-          <Route path='/liked' element={<LikedPage />} />
+          {routes.map(({ path, element: Element }) => (
+            <Route key={path} path={path} element={<Element />} />
+          ))}
         </Routes>
       </div>
     </div>
