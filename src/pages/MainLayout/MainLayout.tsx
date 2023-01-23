@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { SearchComponent } from 'components/SearchComponent/SearchComponent'
 import { CarouselComponent } from 'components/CarouselComponent/CarouselComponent'
 import { Card } from 'components/Card/Card'
@@ -14,10 +14,17 @@ export const MainLayout = () => {
   const dispatch = useAppDispatch()
   const { t } = useTranslation()
   const { sneackers, isLoaded, error } = useAppSelector((state) => state.sneackersReducer)
+  const [filteredSneackers, setFilteredSneaclkers] = useState<ISneackers[] | null>(null)
 
   useEffect(() => {
     dispatch(fetchSneackers())
   }, [])
+
+  const onSearch = (value: string) => {
+    setFilteredSneaclkers(
+      sneackers.filter((item) => item.title.toLowerCase().includes(value.toLowerCase())),
+    )
+  }
 
   return (
     <>
@@ -25,7 +32,7 @@ export const MainLayout = () => {
       <div className={style.container}>
         <div className={style.info}>
           <h1 className={style.title}>{t('All sneackers:')}</h1>
-          <SearchComponent />
+          <SearchComponent onSearch={onSearch} />
         </div>
         {error && <h1>{error}</h1>}
         {isLoaded ? (
@@ -34,15 +41,25 @@ export const MainLayout = () => {
           </div>
         ) : (
           <div className={style.cards}>
-            {sneackers.map((card: ISneackers) => (
-              <Card
-                key={card.id}
-                id={card.id}
-                title={card.title}
-                price={card.price}
-                imageUrl={card.imageUrl}
-              />
-            ))}
+            {filteredSneackers !== null
+              ? filteredSneackers.map((card: ISneackers) => (
+                  <Card
+                    key={card.id}
+                    id={card.id}
+                    title={card.title}
+                    price={card.price}
+                    imageUrl={card.imageUrl}
+                  />
+                ))
+              : sneackers.map((card: ISneackers) => (
+                  <Card
+                    key={card.id}
+                    id={card.id}
+                    title={card.title}
+                    price={card.price}
+                    imageUrl={card.imageUrl}
+                  />
+                ))}
           </div>
         )}
       </div>
