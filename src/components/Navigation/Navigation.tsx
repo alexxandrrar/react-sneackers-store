@@ -16,8 +16,8 @@ export const Navigation = () => {
           </a>
         </li>
         <li>
-          <a onClick={() => navigate('/liked')}>
-            <img width={18} height={18} src={heart} alt='Liked' />
+          <a onClick={() => navigate('/favourites')}>
+            <img width={18} height={18} src={heart} alt='Favourites' />
           </a>
         </li>
         <li>
