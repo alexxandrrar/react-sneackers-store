@@ -1,8 +1,7 @@
-import { ICardProps } from 'components/Card/Card'
-
-export interface ISneackers extends ICardProps {
+export interface ISneackers {
   id: number
   title: string
   price: number
   imageUrl: string
+  isFavourite: boolean
 }

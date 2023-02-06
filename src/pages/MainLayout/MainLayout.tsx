@@ -18,7 +18,7 @@ export const MainLayout = () => {
 
   useEffect(() => {
     dispatch(fetchSneackers())
-  }, [])
+  }, [filteredSneackers])
 
   const onSearch = (value: string) => {
     setFilteredSneaclkers(
@@ -44,6 +44,7 @@ export const MainLayout = () => {
             {filteredSneackers !== null
               ? filteredSneackers.map((card: ISneackers) => (
                   <Card
+                    isFavourite={card.isFavourite}
                     key={card.id}
                     id={card.id}
                     title={card.title}
@@ -53,6 +54,7 @@ export const MainLayout = () => {
                 ))
               : sneackers.map((card: ISneackers) => (
                   <Card
+                    isFavourite={card.isFavourite}
                     key={card.id}
                     id={card.id}
                     title={card.title}
