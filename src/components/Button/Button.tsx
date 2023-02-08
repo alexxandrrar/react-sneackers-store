@@ -11,7 +11,12 @@ interface IButtonProps {
 
 export const Button: FC<IButtonProps> = ({ children, handleOnClick, buttonType }) => {
   return (
-    <button className={style.button} onClick={handleOnClick} style={checkButtonStyles(buttonType)}>
+    <button
+      data-testid='button'
+      className={style.button}
+      onClick={handleOnClick}
+      style={checkButtonStyles(buttonType)}
+    >
       {children}
     </button>
   )
