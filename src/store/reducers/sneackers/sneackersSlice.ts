@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { ISneackers } from 'types/dataTypes'
 
-interface SneackersState {
+export interface SneackersState {
   sneackers: ISneackers[]
   isLoaded: boolean
   error: string
 }
 
-const initialState: SneackersState = {
+export const initialState: SneackersState = {
   sneackers: [],
   isLoaded: false,
   error: '',

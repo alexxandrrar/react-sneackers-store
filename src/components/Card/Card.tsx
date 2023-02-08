@@ -13,7 +13,7 @@ export interface ICardProps {
 
 export const Card: FC<ICardProps> = ({ title, price }) => {
   return (
-    <div className={style.card}>
+    <div data-testid='card' className={style.card}>
       <div className={style.btn}>
         <Button handleOnClick={() => console.log('Added to favourites')} buttonType='card-btn'>
           ♡
