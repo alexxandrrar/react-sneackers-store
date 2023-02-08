@@ -11,6 +11,7 @@ interface ISearchComponentProps {
 export const SearchComponent: FC<ISearchComponentProps> = ({ onSearch }) => {
   return (
     <Search
+      data-testid='search'
       placeholder='Search...'
       allowClear={true}
       onSearch={onSearch}
