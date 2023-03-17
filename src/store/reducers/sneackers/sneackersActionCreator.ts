@@ -17,3 +17,13 @@ export const fetchSneackers = () => async (dispatch: AppDispatch) => {
     dispatch(sneackersFetchingError((error as Error).message))
   }
 }
+
+export const updateFavouriteSneackers = (item: ISneackers) => async () => {
+  try {
+    await axios.put<ISneackers>(`${URL}/items/${item.id}`, item)
+  } catch (error) {
+    if (error instanceof Error) {
+      console.log(error.message)
+    }
+  }
+}

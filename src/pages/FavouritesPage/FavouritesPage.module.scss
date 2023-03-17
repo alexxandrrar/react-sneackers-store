@@ -1,0 +1,25 @@
+@import 'styles/variables.module.scss';
+.container {
+  height: 100vh;
+  padding: 3.75rem 3.75rem;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    color: $textDark;
+    font-family: $fontFamily;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2.43rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .loader {
+    text-align: center;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

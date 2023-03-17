@@ -18,7 +18,7 @@ export const MainLayout = () => {
 
   useEffect(() => {
     dispatch(fetchSneackers())
-  }, [])
+  }, [filteredSneackers])
 
   const onSearch = (value: string) => {
     setFilteredSneaclkers(
@@ -34,7 +34,6 @@ export const MainLayout = () => {
           <h1 className={style.title}>{t('All sneackers:')}</h1>
           <SearchComponent onSearch={onSearch} />
         </div>
-        {error && <h1>{error}</h1>}
         {isLoaded ? (
           <div className={style.loader}>
             <Spin size='large' />
@@ -44,6 +43,7 @@ export const MainLayout = () => {
             {filteredSneackers !== null
               ? filteredSneackers.map((card: ISneackers) => (
                   <Card
+                    isFavourite={card.isFavourite}
                     key={card.id}
                     id={card.id}
                     title={card.title}
@@ -53,6 +53,7 @@ export const MainLayout = () => {
                 ))
               : sneackers.map((card: ISneackers) => (
                   <Card
+                    isFavourite={card.isFavourite}
                     key={card.id}
                     id={card.id}
                     title={card.title}
@@ -62,6 +63,7 @@ export const MainLayout = () => {
                 ))}
           </div>
         )}
+        {error && <h1>{error}</h1>}
       </div>
     </>
   )

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { TButtonStyles } from 'types/commonTypes'
+import { TButtonStyles } from 'types/buttonTypes'
 import { checkButtonStyles } from 'utils/checkButtonStyles'
 import style from './Button.module.scss'
 
