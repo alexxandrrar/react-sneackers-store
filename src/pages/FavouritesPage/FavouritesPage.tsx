@@ -10,17 +10,19 @@ import style from './FavouritesPage.module.scss'
 export const FavouritesPage = () => {
   const dispatch = useAppDispatch()
   const { t } = useTranslation('common')
-  const { sneackers, isLoaded } = useAppSelector((state) => state.sneackersReducer)
-  const [favouriteSneackers, setFavouriteSneackers] = useState<ISneackers[]>([])
+  const { sneackers, isLoaded, error } = useAppSelector((state) => state.sneackersReducer)
+  const [favouriteSneackers] = useState<ISneackers[]>(
+    sneackers.filter((item) => item.isFavourite === true),
+  )
 
   useEffect(() => {
     dispatch(fetchSneackers())
-    setFavouriteSneackers(sneackers.filter((item) => item.isFavourite === true))
-  }, [sneackers])
+  }, [favouriteSneackers])
 
   return (
     <div className={style.container}>
       <h1 className={style.title}>{t('Favourite sneackers:')}</h1>
+      {error && <h1>{error}</h1>}
       {isLoaded ? (
         <div className={style.loader}>
           <Spin size='large' />

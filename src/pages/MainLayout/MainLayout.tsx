@@ -34,7 +34,6 @@ export const MainLayout = () => {
           <h1 className={style.title}>{t('All sneackers:')}</h1>
           <SearchComponent onSearch={onSearch} />
         </div>
-        {error && <h1>{error}</h1>}
         {isLoaded ? (
           <div className={style.loader}>
             <Spin size='large' />
@@ -64,6 +63,7 @@ export const MainLayout = () => {
                 ))}
           </div>
         )}
+        {error && <h1>{error}</h1>}
       </div>
     </>
   )
