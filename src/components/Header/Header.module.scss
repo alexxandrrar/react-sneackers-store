@@ -7,3 +7,9 @@
   border-bottom: solid $editionalColor1 1px;
   height: 6.25rem;
 }
+
+@media (width < 700px) {
+  .header {
+    height: 4rem;
+  }
+}

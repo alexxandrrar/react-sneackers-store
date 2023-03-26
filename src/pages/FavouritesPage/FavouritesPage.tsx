@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { fetchSneackers } from 'store/reducers/sneackers/sneackersActionCreator'
 import { ISneackers } from 'types/dataTypes'
+import noFavourites from 'assets/images/no-favourites.png'
 import style from './FavouritesPage.module.scss'
 
 export const FavouritesPage = () => {
@@ -28,7 +29,10 @@ export const FavouritesPage = () => {
           <Spin size='large' />
         </div>
       ) : favouriteSneackers.length === 0 ? (
-        <h1>You do not have favourite sneackers yet</h1>
+        <div className={style.favourites}>
+          <img width='300' src={noFavourites} alt='No favourites' />
+          <h2>You do not have favourite sneackers yet</h2>
+        </div>
       ) : (
         <div className={style.cards}>
           {favouriteSneackers.map((card: ISneackers) => (

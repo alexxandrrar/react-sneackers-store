@@ -28,7 +28,7 @@ export const Card: FC<ISneackers> = (sneackers) => {
           <HeartTwoTone twoToneColor={favouriteSneackers} />
         </Button>
       </div>
-      <img height='110' src={image} alt='sneackers' />
+      <img className={style.image} src={image} alt='sneackers' />
       <p className={style.title}>{title}</p>
       <div className={style.info}>
         <div>

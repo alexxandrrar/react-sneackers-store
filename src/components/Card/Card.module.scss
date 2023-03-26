@@ -5,14 +5,18 @@
   background: #ffffff;
   border: 1px solid #f3f3f3;
   border-radius: 2.5rem;
-  width: 18%;
+  width: 13rem;
   height: 16.25rem;
   box-shadow: 0px 0.875rem 1.875rem rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
-  margin-right: 3%;
+  margin-right: 2rem;
 
   .btn {
     text-align: start;
+  }
+
+  .image {
+    object-fit: cover;
+    height: 45%;
   }
 
   .title {
@@ -41,5 +45,18 @@
       font-weight: 700;
       font-size: 0.875rem;
     }
+  }
+}
+
+@media (width < 900px) {
+  .card {
+    width: 12rem;
+    height: 15rem;
+  }
+}
+@media (width < 600px) {
+  .card {
+    width: 11rem;
+    height: 14rem;
   }
 }
