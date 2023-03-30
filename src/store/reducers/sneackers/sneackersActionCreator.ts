@@ -27,3 +27,12 @@ export const updateFavouriteSneackers = (item: ISneackers) => async () => {
     }
   }
 }
+export const updateSneackersInCart = (item: ISneackers) => async () => {
+  try {
+    await axios.put<ISneackers>(`${URL}/items/${item.id}`, item)
+  } catch (error) {
+    if (error instanceof Error) {
+      console.log(error.message)
+    }
+  }
+}

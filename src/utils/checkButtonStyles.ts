@@ -8,10 +8,11 @@ export const checkButtonStyles = (type: TButtonStyles) => {
     case GREEN_STYLE_BUTTON:
       return {
         background: '#9DD458',
-        borderRadius: '1.125rem',
-        height: '1.188rem',
-        width: '15.313rem',
+        borderRadius: '1rem',
+        height: '2.5rem',
+        width: '100%',
         color: '#FFFFFF',
+        fontSize: '1.2rem',
       }
     case CARD_STYLE_BUTTON:
       return {

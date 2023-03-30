@@ -4,4 +4,5 @@ export interface ISneackers {
   price: number
   imageUrl: string
   isFavourite: boolean
+  isInCart: boolean
 }

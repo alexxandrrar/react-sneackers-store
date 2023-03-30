@@ -1,0 +1,44 @@
+@import '../../styles/variables.module.scss';
+
+.title {
+  color: $textDark;
+  font-family: $fontFamily;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+  .emptyText {
+    color: $textDark;
+    font-family: $fontFamily;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2rem;
+    text-shadow: red 1px 0 5px;
+  }
+}
+
+.sneackers {
+  border-bottom: 1px solid $editionalColor1;
+  display: flex;
+  justify-content: space-between;
+
+  .text {
+    font-family: $fontFamily;
+    color: $textDark;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+  }
+}
+
+.button {
+  margin-top: 80%;
+}

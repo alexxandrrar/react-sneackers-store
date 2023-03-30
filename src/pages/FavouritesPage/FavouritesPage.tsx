@@ -37,6 +37,7 @@ export const FavouritesPage = () => {
         <div className={style.cards}>
           {favouriteSneackers.map((card: ISneackers) => (
             <Card
+              isInCart={card.isInCart}
               isFavourite={card.isFavourite}
               key={card.id}
               id={card.id}
