@@ -8,23 +8,14 @@ export const CarouselComponent = () => {
     console.log(currentSlide)
   }
 
-  const contentStyle: React.CSSProperties = {
-    borderRadius: '20px',
-    height: '320px',
-    width: '100%',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-  }
-
   return (
     <div className={style.carousel}>
       <Carousel afterChange={onChange}>
         <div>
-          <img style={contentStyle} src={carouselFirstSlideImage} alt='Sneackers' />
+          <img className={style.contentStyle} src={carouselFirstSlideImage} alt='Sneackers' />
         </div>
         <div>
-          <img style={contentStyle} src={carouselSecondSlideImage} alt='Sneackers' />
+          <img className={style.contentStyle} src={carouselSecondSlideImage} alt='Sneackers' />
         </div>
       </Carousel>
     </div>

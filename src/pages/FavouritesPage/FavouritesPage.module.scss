@@ -23,3 +23,9 @@
     flex-wrap: wrap;
   }
 }
+
+.favourites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

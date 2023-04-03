@@ -43,6 +43,7 @@ export const MainLayout = () => {
             {filteredSneackers !== null
               ? filteredSneackers.map((card: ISneackers) => (
                   <Card
+                    isInCart={card.isInCart}
                     isFavourite={card.isFavourite}
                     key={card.id}
                     id={card.id}
@@ -53,6 +54,7 @@ export const MainLayout = () => {
                 ))
               : sneackers.map((card: ISneackers) => (
                   <Card
+                    isInCart={card.isInCart}
                     isFavourite={card.isFavourite}
                     key={card.id}
                     id={card.id}

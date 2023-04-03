@@ -10,19 +10,30 @@ $marginLeft: 0.5rem;
 
   .title {
     color: $textDark;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     font-family: $fontFamily;
-    line-height: 24px;
+    line-height: 1.5rem;
     margin-left: $marginLeft;
   }
 
   .subtitle {
     color: $textLight;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
     font-family: $fontFamily;
-    line-height: 17px;
+    line-height: 1rem;
     margin-left: $marginLeft;
+  }
+}
+
+@media (width < 700px) {
+  .logo {
+    .title {
+      font-size: 1rem;
+    }
+    .subtitle {
+      font-size: 0.775rem;
+    }
   }
 }
