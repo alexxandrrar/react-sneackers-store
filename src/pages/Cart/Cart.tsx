@@ -17,10 +17,17 @@ interface ICartPageProps {
 
 export const Cart: FC<ICartPageProps> = ({ open, setOpen }) => {
   const { t } = useTranslation('common')
-  // const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch()
   const { sneackers } = useAppSelector((state) => state.sneackersReducer)
-  const sneackersInCart: ISneackers[] = sneackers.filter((item) => item.isInCart === true)
-  console.log(sneackers)
+  const [sneackersInCart, setSneackersInCart] = useState<ISneackers[]>([])
+
+  useEffect(() => {
+    dispatch(fetchSneackers())
+  }, [])
+
+  useEffect(() => {
+    sneackers && setSneackersInCart(sneackers.filter((item) => item.isInCart === true))
+  }, [sneackers])
 
   const onClose = () => {
     setOpen(false)

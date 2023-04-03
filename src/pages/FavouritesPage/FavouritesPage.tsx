@@ -12,13 +12,15 @@ export const FavouritesPage = () => {
   const dispatch = useAppDispatch()
   const { t } = useTranslation('common')
   const { sneackers, isLoaded, error } = useAppSelector((state) => state.sneackersReducer)
-  const [favouriteSneackers] = useState<ISneackers[]>(
-    sneackers.filter((item) => item.isFavourite === true),
-  )
+  const [favouriteSneackers, setFavouriteSneackers] = useState<ISneackers[]>([])
 
   useEffect(() => {
     dispatch(fetchSneackers())
-  }, [favouriteSneackers])
+  }, [])
+
+  useEffect(() => {
+    sneackers && setFavouriteSneackers(sneackers.filter((item) => item.isFavourite === true))
+  }, [sneackers])
 
   return (
     <div className={style.container}>

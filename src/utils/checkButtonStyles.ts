@@ -19,10 +19,9 @@ export const checkButtonStyles = (type: TButtonStyles) => {
         height: '2rem',
         width: '2rem',
         background: '#FFFFFF',
-        border: '0.063rem solid #F2F2F2',
+        border: '1.5PX solid #F2F2F2',
         borderRadius: '0.5rem',
       }
-
     default:
       return {}
   }
