@@ -1,20 +1,18 @@
 import { FC, useState } from 'react'
 import { useAppDispatch } from 'hooks/reduxHook'
 import {
-  updateFavouriteSneackers,
-  updateSneackersInCart,
+  updateSneackers,
 } from 'store/reducers/sneackers/sneackersActionCreator'
 import { ISneackers } from 'types/dataTypes'
 import { Button } from 'components/Button/Button'
 import { checkFavouriteButtonColor } from 'utils/checkFavouriteButtonColor'
 import { HeartTwoTone, PlusOutlined, ShoppingCartOutlined } from '@ant-design/icons'
-import image from 'assets/img/1.jpg'
 
 import style from './Card.module.scss'
 
 export const Card: FC<ISneackers> = (sneackers) => {
   const dispatch = useAppDispatch()
-  const { price, title, isFavourite, isInCart } = sneackers
+  const { price, title, isFavourite, isInCart, imageUrl } = sneackers
   const [favouriteSneackers, setFavouriteSneackers] = useState<string>(
     checkFavouriteButtonColor(isFavourite),
   )
@@ -24,12 +22,12 @@ export const Card: FC<ISneackers> = (sneackers) => {
   const [sneackersInCart, setSneackersInCart] = useState<boolean>(isInCart)
 
   const onFavouriteButtonClick = () => {
-    dispatch(updateFavouriteSneackers({ ...sneackers, isFavourite: !isFavourite }))
+    dispatch(updateSneackers({ ...sneackers, isFavourite: !isFavourite }))
     setFavouriteSneackers(checkFavouriteButtonColor(!isFavourite))
   }
 
   const onCartButtonClick = () => {
-    dispatch(updateSneackersInCart({ ...sneackers, isInCart: !isInCart }))
+    dispatch(updateSneackers({ ...sneackers, isInCart: !isInCart }))
     setSneackersInCart(!isInCart)
   }
 
@@ -40,7 +38,7 @@ export const Card: FC<ISneackers> = (sneackers) => {
           <HeartTwoTone twoToneColor={favouriteSneackers} />
         </Button>
       </div>
-      <img className={style.image} src={image} alt='sneackers' />
+      <img className={style.image} src={imageUrl} alt='sneackers' />
       <p className={style.title}>{title}</p>
       <div className={style.info}>
         <div>
