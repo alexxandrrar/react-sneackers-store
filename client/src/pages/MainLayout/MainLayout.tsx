@@ -18,7 +18,7 @@ export const MainLayout = () => {
 
   useEffect(() => {
     dispatch(fetchSneackers())
-  }, [filteredSneackers])
+  }, [])
 
   const onSearch = (value: string) => {
     setFilteredSneaclkers(

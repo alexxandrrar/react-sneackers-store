@@ -3,7 +3,7 @@ import { Button } from 'components/Button/Button'
 import { useAppDispatch, useAppSelector } from 'hooks/reduxHook'
 import { FC, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { fetchSneackers } from 'store/reducers/sneackers/sneackersActionCreator'
+import { fetchSneackers, fetchSneackersInCart } from 'store/reducers/sneackers/sneackersActionCreator'
 import { ISneackers } from 'types/dataTypes'
 import emptyCard from 'assets/images/empty-cart.png'
 

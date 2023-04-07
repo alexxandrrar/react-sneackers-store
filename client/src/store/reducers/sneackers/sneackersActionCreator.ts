@@ -18,6 +18,26 @@ export const fetchSneackers = () => async (dispatch: AppDispatch) => {
   }
 }
 
+export const fetchFavouriteSneackers = () => async (dispatch: AppDispatch) => {
+  try {
+    dispatch(sneackersFetching())
+    const { data } = await axios.get<ISneackers[]>(`${URL}/sneakers/favourite`)
+    dispatch(sneackersFetchingSuccess(data))
+  } catch (error) {
+    dispatch(sneackersFetchingError((error as Error).message))
+  }
+}
+
+export const fetchSneackersInCart = () => async (dispatch: AppDispatch) => {
+  try {
+    dispatch(sneackersFetching())
+    const { data } = await axios.get<ISneackers[]>(`${URL}/sneakers/cart`)
+    dispatch(sneackersFetchingSuccess(data))
+  } catch (error) {
+    dispatch(sneackersFetchingError((error as Error).message))
+  }
+}
+
 export const updateSneackers = (item: ISneackers) => async () => {
   try {
     await axios.put<ISneackers>(`${URL}/sneakers/${item.id}`, item)
