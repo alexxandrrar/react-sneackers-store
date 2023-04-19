@@ -3,9 +3,8 @@ import { Button } from 'components/Button/Button'
 import { useAppDispatch, useAppSelector } from 'hooks/reduxHook'
 import { FC, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { fetchSneackers } from 'store/reducers/sneackers/sneackersActionCreator'
+import { fetchSneackers, fetchSneackersInCart } from 'store/reducers/sneackers/sneackersActionCreator'
 import { ISneackers } from 'types/dataTypes'
-import sneackersImage from 'assets/img/1.jpg'
 import emptyCard from 'assets/images/empty-cart.png'
 
 import style from './Cart.module.scss'
@@ -48,7 +47,7 @@ export const Cart: FC<ICartPageProps> = ({ open, setOpen }) => {
                 <div>{card.title}</div>
                 <div>{card.price}₴</div>
               </div>
-              <img height='100' src={sneackersImage} alt='sneackers' />
+              <img height='100' src={card.imageUrl} alt='sneackers' />
             </div>
           ))}
           <div className={style.button}>
