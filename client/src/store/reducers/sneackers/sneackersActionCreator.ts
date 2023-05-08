@@ -8,6 +8,7 @@ import {
   sneackersFetchingSuccess,
 } from './sneackersSlice'
 
+
 export const fetchSneackers = () => async (dispatch: AppDispatch) => {
   try {
     dispatch(sneackersFetching())

@@ -5,7 +5,7 @@ import {
 } from 'store/reducers/sneackers/sneackersActionCreator'
 import { ISneackers } from 'types/dataTypes'
 import { Button } from 'components/Button/Button'
-import { checkFavouriteButtonColor } from 'utils/checkFavouriteButtonColor'
+import { checkIsFavouriteButton } from 'utils/checkIsFavouriteButton'
 import { HeartTwoTone, PlusOutlined, ShoppingCartOutlined } from '@ant-design/icons'
 
 import style from './Card.module.scss'
@@ -13,17 +13,15 @@ import style from './Card.module.scss'
 export const Card: FC<ISneackers> = (sneackers) => {
   const dispatch = useAppDispatch()
   const { price, title, isFavourite, isInCart, imageUrl } = sneackers
-  const [favouriteSneackers, setFavouriteSneackers] = useState<string>(
-    checkFavouriteButtonColor(isFavourite),
-  )
-
+  const [sneackersInCart, setSneackersInCart] = useState<boolean>(isInCart)
+  const [favouriteSneackers, setFavouriteSneackers] = useState<string>(checkIsFavouriteButton(isFavourite))
+  
   const checkIsSneackersInCart = (boolean: boolean) =>
     boolean === true ? <ShoppingCartOutlined /> : <PlusOutlined />
-  const [sneackersInCart, setSneackersInCart] = useState<boolean>(isInCart)
 
   const onFavouriteButtonClick = () => {
     dispatch(updateSneackers({ ...sneackers, isFavourite: !isFavourite }))
-    setFavouriteSneackers(checkFavouriteButtonColor(!isFavourite))
+    setFavouriteSneackers(checkIsFavouriteButton(!isFavourite))
   }
 
   const onCartButtonClick = () => {
